@@ -68,7 +68,7 @@ header {
     margin-bottom: 3px; 
 }
 .day-turnos { 
-    font-size: 9px; /* Más pequeño */
+    font-size: 12px; /* Más pequeño */
     line-height: 1.1; 
     text-align: left; 
     flex: 1; 
@@ -329,4 +329,5 @@ input, select {
         padding: 14px; /* Máximo para evitar zoom */
         font-size: 16px; 
     }
+
 }
