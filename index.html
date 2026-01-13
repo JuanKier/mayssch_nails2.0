@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Ana - Agendamiento y Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="nail-effect">Nails by Ana</h1>
+        <p>Agendá tu turno y gestioná tus servicios con estilo</p>
+    </header>
+    <div class="container">
+        <h2>Calendario de Turnos</h2>
+        <div class="calendar-header">
+            <button onclick="changeMonth(-1)">Mes Anterior</button>
+            <span id="calendar-header-text"></span>
+            <button onclick="changeMonth(1)">Mes Siguiente</button>
+        </div>
+        <p class="instructions">Haz clic en un día del mes para ver o agendar servicios. Los turnos predefinidos (8, 10, 13, 15 hs) aparecen en días laborables. Puedes agregar horarios manuales.</p>
+        <div class="calendar" id="calendar"></div>
+        
+        <div class="day-details" id="day-details">
+            <h3>Servicios para el día <span id="selected-day"></span></h3>
+            <div class="services" id="day-services">
+                <!-- Servicios se cargan dinámicamente aquí -->
+            </div>
+            <button onclick="openModal('book')">Agendar Nuevo Servicio</button>
+        </div>
+        
+        <h2>Todos los Servicios (Realizados y Pendientes)</h2>
+        <p class="instructions">Aquí ves todos los servicios ordenados por hora. Usa los botones para editar o eliminar.</p>
+        <div class="services" id="all-services">
+            <!-- Servicios se cargan dinámicamente -->
+        </div>
+        <button onclick="openModal('book')">Agregar Servicio Manual</button>
+        
+        <h2>Medios de Pago</h2>
+        <p class="instructions">Elige cómo pagar. Para pagos en línea, usa el botón de abajo.</p>
+        <div class="payment">
+            <p>Aceptamos: Efectivo, Tarjeta, Transferencia</p>
+            <button onclick="processPayment()">Pagar con Tarjeta (Simulado)</button>
+        </div>
+    </div>
+
+    <!-- Modal para formulario -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Agregar Servicio</h3>
+            <form id="service-form">
+                <div class="form-group">
+                    <label for="month-select">Mes y Año:</label>
+                    <select id="month-select" required>
+                        <!-- Opciones se generan dinámicamente -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Día:</label>
+                    <input type="number" id="date" min="1" max="31" required>
+                </div>
+                <div class="form-group">
+                    <label for="client">Cliente:</label>
+                    <input type="text" id="client" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora:</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Estado:</label>
+                    <select id="status" required>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Realizado">Realizado</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" onclick="closeModal()">Cancelar</button>
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
