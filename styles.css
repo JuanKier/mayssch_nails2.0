@@ -4,58 +4,59 @@ body {
     color: #333; 
     margin: 0; 
     padding: 0; 
-    line-height: 1.6; /* Mejor legibilidad */
+    line-height: 1.4; /* Más compacto */
 }
 header { 
     text-align: center; 
-    padding: 20px; 
+    padding: 15px; /* Menos padding */
     background: rgba(255,255,255,0.8); 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 .container { 
     max-width: 1200px; 
     margin: 0 auto; 
-    padding: 20px; 
+    padding: 15px; /* Menos padding */
 }
 .calendar-header { 
     text-align: center; 
-    font-size: 20px; 
+    font-size: 18px; /* Más pequeño */
     font-weight: bold; 
-    margin-bottom: 10px; 
+    margin-bottom: 8px; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    gap: 10px; 
+    gap: 8px; 
 }
 .calendar { 
     display: grid; 
     grid-template-columns: repeat(7, 1fr); 
-    gap: 10px; 
-    margin: 20px 0; 
+    gap: 8px; /* Menos gap */
+    margin: 15px 0; 
 }
 .day-header { 
-    padding: 10px; 
+    padding: 8px; /* Menos padding */
     text-align: center; 
     font-weight: bold; 
     background: #ffeaa7; 
     border: 1px solid #ddd; 
+    font-size: 12px; /* Más pequeño */
 }
 .day { 
-    padding: 10px; 
+    padding: 8px; /* Menos padding */
     border: 2px solid #ddd; 
     text-align: center; 
     cursor: pointer; 
     transition: all 0.3s; 
-    font-size: 12px; 
+    font-size: 11px; /* Más pequeño */
     font-weight: bold; 
-    min-height: 150px; 
+    min-height: 120px; /* Más compacto */
     display: flex; 
     flex-direction: column; 
     justify-content: flex-start; 
 }
 .day:hover { 
     background: #ffeaa7; 
-    transform: scale(1.02); 
+    transform: scale(1.01); /* Menos escala para no sobrecargar */
 }
 .selected { 
     background: #fd79a8; 
@@ -63,58 +64,58 @@ header {
     border-color: #e84393; 
 }
 .day-number { 
-    font-size: 14px; 
-    margin-bottom: 5px; 
+    font-size: 13px; /* Más pequeño */
+    margin-bottom: 3px; 
 }
 .day-turnos { 
-    font-size: 10px; 
-    line-height: 1.2; 
+    font-size: 9px; /* Más pequeño */
+    line-height: 1.1; 
     text-align: left; 
     flex: 1; 
-    overflow-y: auto; /* Para días con muchos turnos */
+    overflow-y: auto; 
 }
 .day-details { 
-    margin: 20px 0; 
-    padding: 20px; 
+    margin: 15px 0; 
+    padding: 15px; /* Menos padding */
     background: rgba(255,255,255,0.9); 
-    border-radius: 10px; 
+    border-radius: 8px; 
     display: none; 
 }
 .services { 
-    margin: 20px 0; 
+    margin: 15px 0; 
 }
 .service-item { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 15px; 
+    padding: 12px; /* Menos padding */
     border-bottom: 1px solid #eee; 
-    font-size: 16px; 
-    flex-wrap: wrap; /* Para móviles */
+    font-size: 14px; /* Más pequeño */
+    flex-wrap: wrap; 
 }
 .service-info { 
     flex: 1; 
-    min-width: 200px; /* Evitar que se comprima demasiado */
+    min-width: 150px; /* Más compacto */
 }
 .service-actions { 
     display: flex; 
-    gap: 10px; 
+    gap: 8px; 
     flex-shrink: 0; 
 }
 .payment { 
-    margin: 20px 0; 
+    margin: 15px 0; 
 }
 button { 
     background: #fd79a8; 
     color: white; 
     border: none; 
-    padding: 10px 15px; 
+    padding: 10px 12px; 
     cursor: pointer; 
     border-radius: 5px; 
     transition: 0.3s; 
-    font-size: 14px; 
-    min-height: 44px; /* Táctil para móviles */
-    min-width: 44px; /* Ancho mínimo para facilidad de toque */
+    font-size: 13px; 
+    min-height: 44px; /* Para evitar zoom en móviles */
+    min-width: 44px; 
 }
 button:hover { 
     background: #e84393; 
@@ -144,9 +145,9 @@ button:hover {
     100% { left: 100%; } 
 }
 .instructions { 
-    font-size: 14px; 
+    font-size: 13px; /* Más pequeño */
     color: #666; 
-    margin-bottom: 10px; 
+    margin-bottom: 8px; 
 }
 /* Modal Styles */
 .modal { 
@@ -162,17 +163,17 @@ button:hover {
 }
 .modal-content { 
     background-color: #fefefe; 
-    margin: 15% auto; 
-    padding: 20px; 
+    margin: 10% auto; /* Más arriba para móviles */
+    padding: 15px; /* Menos padding */
     border: 1px solid #888; 
-    width: 80%; 
-    max-width: 400px; 
-    border-radius: 10px; 
+    width: 85%; 
+    max-width: 350px; /* Más pequeño */
+    border-radius: 8px; 
 }
 .close { 
     color: #aaa; 
     float: right; 
-    font-size: 28px; 
+    font-size: 24px; /* Más pequeño */
     font-weight: bold; 
     cursor: pointer; 
 }
@@ -180,118 +181,124 @@ button:hover {
     color: black; 
 }
 .form-group { 
-    margin-bottom: 15px; 
+    margin-bottom: 12px; /* Menos margen */
 }
 label { 
     display: block; 
-    margin-bottom: 5px; 
+    margin-bottom: 4px; 
     font-weight: bold; 
+    font-size: 14px; 
 }
 input, select { 
     width: 100%; 
-    padding: 8px; 
+    padding: 10px; /* Más padding para inputs más grandes y evitar zoom */
     border: 1px solid #ddd; 
     border-radius: 4px; 
-    box-sizing: border-box; /* Para incluir padding en el ancho */
+    box-sizing: border-box; 
+    font-size: 16px; /* Tamaño mínimo para evitar zoom en iOS */
 }
 .modal-buttons { 
     text-align: right; 
-    margin-top: 20px; 
+    margin-top: 15px; 
     display: flex; 
     justify-content: flex-end; 
-    gap: 10px; 
+    gap: 8px; 
 }
 
 /* Media Queries para tablets */
 @media (max-width: 1024px) {
     .container { 
-        padding: 15px; 
+        padding: 12px; 
     }
     .calendar { 
-        gap: 8px; 
+        gap: 6px; 
     }
     .day { 
-        min-height: 120px; 
-        padding: 8px; 
+        min-height: 100px; 
+        padding: 6px; 
     }
     .day-turnos { 
-        font-size: 9px; 
+        font-size: 8px; 
     }
     .calendar-header { 
-        font-size: 18px; 
+        font-size: 16px; 
     }
     .modal-content { 
-        width: 85%; 
-        margin: 10% auto; 
+        width: 80%; 
+        margin: 8% auto; 
     }
 }
 
 /* Media Queries para móviles */
 @media (max-width: 768px) {
     .container { 
-        padding: 10px; 
+        padding: 8px; 
     }
     .calendar { 
         grid-template-columns: repeat(7, 1fr); 
-        gap: 5px; 
+        gap: 4px; 
     }
     .day { 
-        padding: 5px; 
-        font-size: 10px; 
-        min-height: 80px; /* Más compacto para móviles */
+        padding: 4px; 
+        font-size: 9px; 
+        min-height: 70px; /* Aún más compacto */
         justify-content: center; 
     }
     .day-number { 
-        font-size: 12px; 
-        margin-bottom: 2px; 
+        font-size: 11px; 
+        margin-bottom: 1px; 
     }
     .day-turnos { 
-        font-size: 8px; 
-        text-align: center; /* Centrar para mejor visibilidad */
+        font-size: 7px; 
+        text-align: center; 
     }
     .calendar-header { 
-        font-size: 16px; 
+        font-size: 14px; 
         flex-direction: column; 
-        gap: 5px; 
+        gap: 4px; 
     }
     .calendar-header button { 
         width: 100%; 
-        max-width: 150px; 
+        max-width: 120px; 
     }
     .modal-content { 
         width: 95%; 
-        margin: 5% auto; 
-        padding: 15px; 
+        margin: 3% auto; 
+        padding: 12px; 
     }
     button { 
         font-size: 12px; 
-        padding: 8px 12px; 
-        width: 100%; /* Botones full-width en móviles para facilidad */
-        margin-bottom: 5px; 
+        padding: 8px 10px; 
+        width: 100%; 
+        margin-bottom: 4px; 
     }
     .service-item { 
-        font-size: 14px; 
-        padding: 10px; 
+        font-size: 12px; 
+        padding: 8px; 
         flex-direction: column; 
         align-items: flex-start; 
     }
     .service-actions { 
         width: 100%; 
         justify-content: center; 
-        margin-top: 10px; 
+        margin-top: 8px; 
     }
     .modal-buttons { 
         flex-direction: column; 
     }
     .instructions { 
-        font-size: 12px; 
+        font-size: 11px; 
+    }
+    input, select { 
+        padding: 12px; /* Aún más grande para evitar zoom */
+        font-size: 16px; 
     }
 }
 
 /* Media Queries para móviles pequeños (e.g., iPhone SE) */
 @media (max-width: 480px) {
     header { 
-        padding: 15px; 
+        padding: 10px; 
     }
     .container { 
         padding: 5px; 
@@ -300,22 +307,26 @@ input, select {
         gap: 2px; 
     }
     .day { 
-        min-height: 60px; 
-        padding: 3px; 
+        min-height: 50px; 
+        padding: 2px; 
     }
     .day-number { 
-        font-size: 10px; 
+        font-size: 9px; 
     }
     .day-turnos { 
-        font-size: 7px; 
+        font-size: 6px; 
     }
     .modal-content { 
         width: 98%; 
-        margin: 2% auto; 
-        padding: 10px; 
+        margin: 1% auto; 
+        padding: 8px; 
     }
     button { 
-        font-size: 11px; 
-        padding: 6px 10px; 
+        font-size: 10px; 
+        padding: 6px 8px; 
+    }
+    input, select { 
+        padding: 14px; /* Máximo para evitar zoom */
+        font-size: 16px; 
     }
 }

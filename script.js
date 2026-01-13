@@ -134,7 +134,7 @@ function loadDayServices(day) {
             } else {
                 item.innerHTML = `
                     <div class="service-info">
-                        Hora: ${slot.time} - Libre
+                        Hora: ${slot.time}
                     </div>
                     <div class="service-actions">
                         <button onclick="openModal('book', null, '${slot.time}')">Agendar</button>
