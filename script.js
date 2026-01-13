@@ -76,7 +76,13 @@ function generateCalendar() {
         const dayServicesList = getDaySlots(i, dayOfWeek, services);
         let turnosHtml = '';
         dayServicesList.forEach(slot => {
-            turnosHtml += `<div>${slot.time} - ${slot.client || 'Libre'}</div>`;
+            if (slot.client) {
+                // Si está ocupado, mostrar hora - Cliente
+                turnosHtml += `<div>${slot.time} - ${slot.client}</div>`;
+            } else {
+                // Si está libre, solo mostrar la hora
+                turnosHtml += `<div>${slot.time}</div>`;
+            }
         });
         day.innerHTML = `<div class="day-number">${i}</div><div class="day-turnos">${turnosHtml}</div>`;
         day.onclick = () => selectDay(day, i);
@@ -247,4 +253,5 @@ monthSelect.addEventListener('change', onMonthSelectChange);
 serviceForm.addEventListener('submit', function(e) {
     e.preventDefault();
     saveService();
+
 });
